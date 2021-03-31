@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm' version '1.4.31'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11
+    }
+    kotlinOptions.useIR = true
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://maven.pkg.github.com/Setekh/plugin-system"
+
+        // This is a public token with on read:packages.
+        credentials {
+            username 'token'
+            password '3b8992d581d52a25e006401d2cfbe13d06dbfef3'
+        }
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+
+    implementation "com.archid:server:1.0-SNAPSHOT"
+    implementation "com.archid:plugin-system:1.0-SNAPSHOT"
+}

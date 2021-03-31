@@ -1,0 +1,5 @@
+{
+  "name": "Example plugin",
+  "versionCode": 1,
+  "classPath": "com.example.ExamplePlugin"
+}
